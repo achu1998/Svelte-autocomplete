@@ -1,7 +1,3 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
-
----
-
 # svelte auto-complete app
 
 ### This assignment is to create a basic autocomplete component that works like Google's search box (an input that shows suggestions when the user starts typing). Almost every web application needs such a component to enable search with smart suggestions. 
@@ -29,6 +25,9 @@ function a(ma){
 	matches = [];
 }	
 ```
+
+* Here i have used names of fruits as an example. The input letter is matches with all the names in the array and suggestion is listed with typed letters in bold.
+
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
