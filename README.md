@@ -28,6 +28,8 @@ function a(ma){
 
 * Here i have used names of fruits as an example. The input letter is matches with all the names in the array and suggestion is listed with typed letters in bold.
 
+![Screenshot (82)](https://user-images.githubusercontent.com/43047640/96122959-ce992080-0f0f-11eb-99d0-8b4f7b1c35d9.png)
+
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
