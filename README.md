@@ -4,11 +4,11 @@
 
 # svelte auto-complete app
 
-###This assignment is to create a basic autocomplete component that works like Google's search box (an input that shows suggestions when the user starts typing). Almost every web application needs such a component to enable search with smart suggestions. 
+### This assignment is to create a basic autocomplete component that works like Google's search box (an input that shows suggestions when the user starts typing). Almost every web application needs such a component to enable search with smart suggestions. 
 
 * Algorithm
 
-'''
+```
 let m = '';
 let container;	
 let fruits = ["apple","avocado","orange","pineapple","grapes"];
@@ -28,7 +28,7 @@ function a(ma){
 	m = ma;
 	matches = [];
 }	
-'''
+```
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
