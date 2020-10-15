@@ -1,41 +1,51 @@
 <script>
-	export let name;
-	export let search = '';
-	let fruits = ['apple','mango','orange','avocado','pineapple','grapes'];
-		
+let m = '';
+let container;	
+let fruits = ["apple","avocado","orange","pineapple","grapes"];
+let matches='';
+let searches='';	
+ function autocomplete(event) {
+       searches = event.target.value;
+	     matches = fruits.filter(fruit =>{
+				 const regex = new RegExp(`^${searches}`,'gi');
+				 return fruit.match(regex);
+			 });
+	   if(searches.length ===0){
+			 matches=[];
+		 }
+    };
+function a(ma){
+	m = ma;
+	matches = [];
+}	
 </script>
+<div class="form-group">
+	<input type="text" on:input={autocomplete} placeholder="Enter Name" 
+    class="dropdown" value={m}>	
+	<div class="dropdown">
+	<div id="myDropdown" class="dropdown-content">
+		{#each matches as match}
+		<li on:click={a(match)}>{match.slice(0,searches.length)}{@html match.slice(searches.length,match.length).bold()}</li>
+		{/each}
+		</div>
+		</div>
+	</div>
 
-<main>
-	<h1>Enjoy {name}!</h1>
-	<p><input bind:value={search} list="fruits" name="fruit" id="fruit" placeholder="Search Fruits" ></p>
-	<datalist id="fruits">	
-	{#each fruits as item}
-		{#if item.slice(0,search.length) == search.toLowerCase()}
-			<option value={item}></option>
-		{/if}
-	{/each}
-</datalist>
-
-</main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+	.dropdown :global(.dropdown-content) {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 216px;
+  box-shadow: 1px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  }
+	:global(li):hover{background-color: #ddd}
+	:global(li){
+		color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+	display:block;	
 	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+	
 </style>
